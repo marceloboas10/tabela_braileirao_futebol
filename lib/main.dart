@@ -5,17 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get.dart';
 
-
 void main() {
   Get.lazyPut<ThemeController>(() => ThemeController());
 
   runApp(ChangeNotifierProvider(
     create: (context) => TimesRepository(),
-    child:  const MeuAplicativo(),
+    child: const MeuAplicativo(),
   ));
 }
-
-
 
 class MeuAplicativo extends StatelessWidget {
   const MeuAplicativo({super.key});
@@ -25,8 +22,8 @@ class MeuAplicativo extends StatelessWidget {
     ThemeController.instancia.loadThemeMode();
 
     return GetMaterialApp(
-      title: 'Brasileirão',
       debugShowCheckedModeBanner: false,
+      title: 'Brasileirão',
       theme: ThemeData(
         primarySwatch: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -36,7 +33,6 @@ class MeuAplicativo extends StatelessWidget {
         brightness: Brightness.dark,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         primarySwatch: Colors.grey,
-        
         iconTheme: const IconThemeData(color: Colors.black),
         dividerColor: Colors.black45,
         elevatedButtonTheme: ElevatedButtonThemeData(

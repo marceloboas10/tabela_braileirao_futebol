@@ -71,7 +71,7 @@ class _TimePageState extends State<TimePage> {
     final time = Provider.of<TimesRepository>(context)
         .times
         .firstWhere((t) => t.nome == widget.time?.nome);
-    final quantidade = time.titulos.length;
+    final quantidade = time.titulos?.length;
 
     return quantidade == 0
         ? const Center(
@@ -85,24 +85,24 @@ class _TimePageState extends State<TimePage> {
                   color: Colors.amber,
                 ),
                 title: Text(
-                  time.titulos[index].campeonato,
+                  time.titulos![index].campeonato,
                   style: const TextStyle(fontSize: 18),
                 ),
                 trailing: Text(
-                  time.titulos[index].ano,
+                  time.titulos![index].ano,
                   style: const TextStyle(fontSize: 18),
                 ),
                 onTap: () {
                   Get.to(
                       EditTituloPage(
-                        titulo: time.titulos[index],
+                        titulo: time.titulos![index],
                       ),
                       fullscreenDialog: true);
                 },
               );
             },
             separatorBuilder: (_, __) => const Divider(),
-            itemCount: quantidade,
+            itemCount: quantidade!,
           );
   }
 }

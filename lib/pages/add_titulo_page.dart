@@ -6,9 +6,9 @@ import 'package:provider/provider.dart';
 import 'package:get/get.dart';
 
 class AddTituloPage extends StatefulWidget {
-  final Time time;
-
   const AddTituloPage({super.key, required this.time});
+
+  final Time time;
 
   @override
   State<AddTituloPage> createState() => _AddTituloPageState();
